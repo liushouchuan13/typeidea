@@ -7,10 +7,10 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-class Link(models.Models):
+class Link(models.Model):
     STATUS_ITEMS = (
-        (1, '正常')
-        (2, '删除')
+        (1, '正常'),
+        (2, '删除'),
     )
 
     title = models.CharField(max_length=50, verbose_name='标题')
@@ -24,19 +24,19 @@ class Link(models.Models):
     created_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
 
     class Meta:
-        verbose_name = verbose_name_plual = '友链'
+        verbose_name = verbose_name_plural = '友链'
 
 
 class SideBar(models.Model):
-    STATUS_ITEMS=(
-        (1, '展示')
-        (2, '下线')
+    STATUS_ITEMS = (
+        (1, '展示'),
+        (2, '下线'),
     )
-    SIDE_TYPE=(
-        (1, 'HTML')
-        (2, '最新文章')
-        (3, '热门文章')
-        (4, '最近文章')
+    SIDE_TYPE = (
+        (1, 'HTML'),
+        (2, '最新文章'),
+        (3, '热门文章'),
+        (4, '最近文章'),
     )
     title = models.CharField(max_length=50, verbose_name='标题')
     display_type = models.PositiveIntegerField(default=1, choices=SIDE_TYPE,
@@ -48,4 +48,4 @@ class SideBar(models.Model):
     created_time = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
 
     class Meta:
-        verbose_name = verbose_name_plual = '侧边栏'
+        verbose_name = verbose_name_plural = '侧边栏'
